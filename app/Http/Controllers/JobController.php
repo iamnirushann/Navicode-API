@@ -97,7 +97,7 @@ class JobController extends Controller
         try {
             // Validate request data for creating a job
             $validated = $request->validate([
-                'title' => 'required|string',
+                'title' => 'required|string|unique:job',
                 'requirements' => 'required|string',
                 'location' => 'required|string',
                 'category_id' => 'required|string',

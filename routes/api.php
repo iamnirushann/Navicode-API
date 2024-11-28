@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ContactDetailController;
+use App\Http\Controllers\SubscriberController;
 
 // Job routes
 Route::get('/jobs', [JobController::class, 'index']);          // Retrieve all job records
@@ -27,3 +28,9 @@ Route::get('/category-details/{id}', [CategoryController::class, 'show']);      
 Route::post('/category-details', [CategoryController::class, 'store']);         // Create a new contact detail
 Route::put('/category-details/{id}', [CategoryController::class, 'update']);    // Update a specific contact detail by ID
 Route::delete('/category-details/{id}', [CategoryController::class, 'destroy']); // Delete a specific contact detail by ID
+
+// Subscriber Details routes
+Route::get('/subscribers', [SubscriberController::class, 'index']); // Get all subscribers
+Route::post('/subscribers', [SubscriberController::class, 'store']); // Add a new subscriber
+Route::get('/subscribers/{id}', [SubscriberController::class, 'show']); // Get subscriber by ID
+Route::delete('/subscribers/{id}', [SubscriberController::class, 'destroy']); // Delete a subscriber
